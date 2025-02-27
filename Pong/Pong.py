@@ -23,6 +23,7 @@ class GUI:
 
 
 
+
 class Paddle:
 
     def move_up(self):
