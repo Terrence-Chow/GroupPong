@@ -25,8 +25,11 @@ class GUI:
 
 class Paddle:
 
+    def __init__(self, y_vel):
+        self.canvas = Canvas(width=10, height= 75, background="white")
+        self.y = y_vel
     def move_up(self):
-        pass
+
 
     def move_down(self):
         pass
