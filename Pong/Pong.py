@@ -21,7 +21,7 @@ class GUI:
     def player_one_up(self):
         self.left.MoveUp()
 
-
+k
 
 
 class Paddle:
