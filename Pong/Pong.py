@@ -1,4 +1,5 @@
 from tkinter import *
+import random
 
 
 class GUI:
@@ -13,26 +14,27 @@ class GUI:
         self.title = self.canvas.create_text(self.CANVAS_WIDTH/2, 50,
                                              text="PONG", fill="white")
 
-        self.canvas.bind("<Button-1>", self.player_one_up)
+        self.left = Paddle(20, self.canvas)
 
-        self.left = Paddle()
+        self.canvas.bind_all("<w>", lambda event:self.player_one_up())
+
+
         self.window.mainloop()
 
-    def player_one_up(self):
-        self.left.MoveUp()
 
-    def gain_point(self):
-        pass
+    def player_one_up(self):
+        self.left.move_up()
 
 
 
 class Paddle:
 
-    def __init__(self, y_vel):
-        self.canvas = Canvas(width=10, height= 75, background="white")
+    def __init__(self, y_vel, canvas):
+        self.canvas = canvas
         self.y = y_vel
     def move_up(self):
-
+        self.canvas.create_rectangle(10, 10, 10 + 100, 10 + 100,
+                                     fill=f"#{random.randint(0, 0xFFFFFF):06x}")
 
     def move_down(self):
         pass
